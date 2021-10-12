@@ -16,7 +16,7 @@ const GlobalHeaderRight: React.FC = () => {
     pollingInterval: 20000,
     pollingWhenHidden: false,
     onSuccess: data => {
-      notification[data.status || 'success']({
+      notification[data.status === 'success' ? 'success' : 'warn']({
         message: data.msg || '',
       });
     }
